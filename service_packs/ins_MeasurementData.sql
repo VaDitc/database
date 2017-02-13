@@ -9,13 +9,12 @@ GO
 CREATE PROCEDURE [dbo].[ins_MeasurementData]
 	 @Weight FLOAT,
 	 @ScalesNumber INT,
-	 @Speed FLOAT,
 	 @Productivity FLOAT
  AS
  
 BEGIN
 	SET NOCOUNT ON;
-	insert into MeasurementData (ScalesNumberID, CurrentSpeed, CurrentWeight, CurrentProductivity, TimeOfMeasurement)
-	values (@ScalesNumber, @Speed, @Weight, @Productivity, getdate())
+	insert into MeasurementData (ScalesNumberID, CurrentWeight, CurrentProductivity, TimeOfMeasurement)
+	values (@ScalesNumber, @Weight, @Productivity, getdate())
     SET NOCOUNT OFF;
 END
